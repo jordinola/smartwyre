@@ -18,21 +18,22 @@ Please note: if your submission appears to have been generated entirely by an AI
 
 In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
 
- 1. Lookup the rebate that the request is being made against.
- 2. Lookup the product that the request is being made against.
- 2. Check that the rebate and request are valid to calculate the incentive type rebate.
- 3. Store the rebate calculation.
+1.  Lookup the rebate that the request is being made against.
+2.  Lookup the product that the request is being made against.
+3.  Check that the rebate and request are valid to calculate the incentive type rebate.
+4.  Store the rebate calculation.
 
 What we'd like you to do is refactor the code with the following things in mind:
 
- - Adherence to SOLID principles
- - Testability
- - Readability
- - Currently there are 3 known incentive types. In the future the business will want to add many more incentive types. Your solution should make it easy for developers to add new incentive types in the future.
+- Adherence to SOLID principles
+- Testability
+- Readability
+- Currently there are 3 known incentive types. In the future the business will want to add many more incentive types. Your solution should make it easy for developers to add new incentive types in the future.
 
-We’d also like you to 
- - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
- - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs (either via command line arguments or via prompts is fine)
+We’d also like you to
+
+- Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced
+- Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs (either via command line arguments or via prompts is fine)
 
 The only specific "rules" are:
 
@@ -44,3 +45,20 @@ You are free to use any frameworks/NuGet packages that you see fit. You should p
 Feel free to use code comments to describe your changes. You are also welcome to update this readme with any important details for us to consider.
 
 Once you have completed the exercise either ensure your repository is available publicly or contact the hiring manager to set up a private share.
+
+# Change Log
+
+- Refactor to follow SOLID principles
+- Code clean up
+- Improve ability to add new incentives
+- Add unit test for `RebateService` class
+
+# How to add a new incentive
+
+- Add a new incentive to the enum type
+- Add a new incentive logic implementation to the Services/Incentives folder. This new implementation must implements the `IIncentive` interface
+- Add this new class to the `IncentiveFactory` class
+
+# Mention
+
+Following the 1 hour duration time mentioned above. Couldn't add more tests (for the Factory class and Incentives implementations) nor updating the Runner class.
